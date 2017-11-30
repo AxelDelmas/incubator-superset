@@ -15,6 +15,7 @@ export const slice = {
     date_filter: false,
     until: '2014-01-02',
     extra_filters: null,
+    extra_groupby: null,
     force: null,
     where: '',
     since: '2014-01-01',

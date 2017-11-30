@@ -746,3 +746,9 @@ def merge_extra_filters(form_data):
                     form_data['filters'] += [filtr]
         # Remove extra filters from the form data since no longer needed
         del form_data['extra_filters']
+
+    if 'extra_groupby' in form_data:
+        for g in form_data['extra_groupby']:
+            if not g in form_data['groupby']:
+                form_data['groupby'] += [g]
+        del form_data['extra_groupby']

@@ -111,6 +111,9 @@ class Dashboard extends React.PureComponent {
     const formDataExtra = Object.assign({}, slice.formData);
     const extraFilters = this.effectiveExtraFilters(slice.slice_id);
     formDataExtra.extra_filters = formDataExtra.filters.concat(extraFilters);
+    if (window.sr_extra_groupby) {
+        formDataExtra.extra_groupby = formDataExtra.groupby.concat(window.sr_extra_groupby);
+    }
     return formDataExtra;
   }
 
